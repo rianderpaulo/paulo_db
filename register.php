@@ -55,3 +55,56 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    </head>
+<body>
+
+<div class="container">
+    <h2>Create Account</h2>
+
+    <form method="POST" action="register.php">
+        <input
+            type="text"
+            name="username"
+            placeholder="Choose a username"
+            maxlength="50"
+            required
+        >
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Choose a password (8+ characters)"
+            minlength="8"
+            required
+        >
+
+        <input
+            type="password"
+            name="confirm_password"
+            placeholder="Confirm password"
+            minlength="8"
+            required
+        >
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p class="message">
+        <?= htmlspecialchars($message, ENT_QUOTES, "UTF-8") ?>
+    </p>
+
+    <p class="link">
+        Already have an account?
+        <a href="login.php">Log in</a>
+    </p>
+</div>
+
+</body>
+</html>
